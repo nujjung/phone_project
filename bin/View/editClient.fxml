@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" prefHeight="423.0" prefWidth="500.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Label text="거래처" />
+                  <TextField id="editTxtAccount" prefHeight="50.0" prefWidth="350.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Label text="대표자" />
+                  <TextField id="editTxtCEO" prefHeight="50.0" prefWidth="350.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Label text="주소지" />
+                  <TextField id="editTxtAddress" prefHeight="50.0" prefWidth="350.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Label text="연락처" />
+                  <TextField id="editTxtPhone" prefHeight="50.0" prefWidth="350.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Label text="등록일" />
+                  <DatePicker id="editDatePicker" prefHeight="50.0" prefWidth="350.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+         <children>
+            <Button id="editBtnEdit" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="적용" />
+            <Button id="editBtnClose" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="닫기" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

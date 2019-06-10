@@ -1,0 +1,50 @@
+AnchorPane{
+	-fx-background-image: url("../images/start.png");
+}
+
+Button{
+	-fx-font-family:"Berlin Sans FB";
+	-fx-font-size:25;
+	-fx-font-weight:normal;
+	-fx-background-radius:20;
+	-fx-background-color:white;
+	-fx-text-fill:black;
+	-fx-cursor:hand;
+	-fx-opacity: 0.8;
+}
+
+Button:hover{
+	-fx-font-family:"Berlin Sans FB";
+	-fx-font-size:28;
+	-fx-font-weight:normal;	
+	-fx-background-color:white;
+	-fx-background-radius:20;
+	-fx-text-fill:black;
+	-fx-opacity: 1.0;
+}
+
+TextField, PasswordField{
+	-fx-font-family:"³ª´®¹Ù¸¥Ææ";
+	-fx-background-color:darkgray;
+	-fx-font-size:25;
+	-fx-background-radius:0;
+	-fx-opacity: 0.5;
+	-fx-font-color:black;
+}
+
+TextField:focused, PasswordField:focused{
+	-fx-font-family:"³ª´®¹Ù¸¥Ææ";
+	-fx-background-color:darkgray;
+	-fx-font-size:25;
+	-fx-background-radius:0;
+	-fx-opacity: 1;
+	-fx-text-fill: black;
+}
+
+Label{
+	-fx-font-family:"Bauhaus 93";
+	-fx-font-size:25.0;
+	-fx-font-color: #005e44;
+	-fx-text-fill:#005e44;
+	-fx-font-weight:bold;
+}

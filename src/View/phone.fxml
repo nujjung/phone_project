@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainController">
+   <children>
+      <TabPane prefHeight="700.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="tabStock" text="가용재고">
+               <content>
+                  <VBox prefHeight="313.0" prefWidth="800.0">
+                     <children>
+                        <TableView fx:id="stockTableView" prefHeight="641.0" prefWidth="760.0" VBox.vgrow="NEVER">
+                          <columns>
+                            <TableColumn prefWidth="180.0" text="제조사" />
+                            <TableColumn prefWidth="190.0" text="모델명" />
+                              <TableColumn prefWidth="180.0" text="색상" />
+                              <TableColumn prefWidth="180.0" text="수량" />
+                          </columns>
+                        </TableView>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </content>
+          </Tab>
+            <Tab fx:id="tabIn" text="입고">
+               <content>
+                  <VBox prefHeight="313.0" prefWidth="800.0" spacing="20.0">
+                     <children>
+                        <TableView fx:id="inTableView" prefHeight="300.0" prefWidth="200.0" VBox.vgrow="NEVER">
+                           <columns>
+                              <TableColumn prefWidth="70.0" text="제조사" />
+                              <TableColumn prefWidth="130.0" text="모델명" />
+                              <TableColumn prefWidth="70.0" text="색상" />
+                              <TableColumn prefWidth="130.0" text="입고일" />
+                              <TableColumn prefWidth="110.0" text="일련번호" />
+                              <TableColumn prefWidth="100.0" text="가격" />
+                              <TableColumn prefWidth="130.0" text="비고" />
+                           </columns>
+                        </TableView>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <ComboBox fx:id="inCmbCompany" prefHeight="50.0" prefWidth="150.0" promptText="제조사" />
+                              <ComboBox fx:id="inCmbModel" prefHeight="50.0" prefWidth="230.0" promptText="모델명" />
+                              <ComboBox fx:id="inCmbColor" prefHeight="50.0" prefWidth="140.0" promptText="색상" />
+                              <TextField fx:id="inTextSerial" prefHeight="50.0" prefWidth="170.0" promptText="일련번호" />
+                              <DatePicker fx:id="inDatePicker" prefHeight="50.0" prefWidth="170.0" promptText="날짜선택" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="inTextMemo" prefHeight="80.0" prefWidth="760.0" promptText="MEMO" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                           <children>
+                              <Button fx:id="inBtnReg" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="입고" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab fx:id="tabOut" text="출고">
+               <content>
+                  <VBox prefHeight="313.0" prefWidth="800.0">
+                     <children>
+                        <TableView fx:id="outTableView" prefHeight="333.0" prefWidth="760.0" VBox.vgrow="NEVER">
+                           <columns>
+                              <TableColumn prefWidth="90.0" text="출고처" />
+                              <TableColumn prefWidth="60.0" text="제조사" />
+                              <TableColumn prefWidth="135.0" text="모델명" />
+                              <TableColumn prefWidth="100.0" text="일련번호" />
+                              <TableColumn prefWidth="50.0" text="색상" />
+                              <TableColumn prefWidth="130.0" text="출고일" />
+                              <TableColumn prefWidth="100.0" text="가격" />
+                              <TableColumn prefWidth="70.0" text="비고" />
+                           </columns>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </TableView>
+                        <VBox prefHeight="100.0" prefWidth="760.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                                 <children>
+                                    <ComboBox fx:id="outCmbClient" prefHeight="50.0" prefWidth="200.0" promptText="출고처" />
+                                    <ComboBox fx:id="outCmbCompany" prefHeight="50.0" prefWidth="200.0" promptText="제조사" />
+                                    <ComboBox fx:id="outCmbModel" prefHeight="50.0" prefWidth="200.0" promptText="모델명" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <ComboBox fx:id="outCmbColor" prefHeight="50.0" prefWidth="200.0" promptText="색상" />
+                              <ComboBox fx:id="outCmbSerial" prefHeight="50.0" prefWidth="200.0" promptText="일련번호" />
+                              <DatePicker fx:id="outDatePicker" prefHeight="50.0" prefWidth="200.0" promptText="날짜선택" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="outTextMemo" prefHeight="100.0" prefWidth="760.0" promptText="MEMO">
+                                 <HBox.margin>
+                                    <Insets top="10.0" />
+                                 </HBox.margin></TextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                           <children>
+                              <Button fx:id="outBtnOut" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="출고" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab fx:id="tabModel" text="모델">
+               <content>
+                  <VBox prefHeight="313.0" prefWidth="800.0" spacing="20.0">
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                     <children>
+                        <VBox prefHeight="389.0" prefWidth="760.0">
+                           <children>
+                              <TableView fx:id="regTableView" prefHeight="364.0" prefWidth="760.0">
+                                <columns>
+                                  <TableColumn prefWidth="120.0" text="제조사" />
+                                  <TableColumn prefWidth="120.0" text="모델명" />
+                                    <TableColumn prefWidth="120.0" text="색상" />
+                                    <TableColumn prefWidth="120.0" text="가격" />
+                                    <TableColumn prefWidth="120.0" text="출시일" />
+                                    <TableColumn prefWidth="130.0" text="이미지" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="47.0" prefWidth="760.0" spacing="20.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="500.0" prefWidth="700.0" spacing="30.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="123.0" prefWidth="290.0" spacing="10.0">
+                                       <children>
+                                          <ImageView fx:id="regImage" fitHeight="150.0" fitWidth="180.0" pickOnBounds="true" />
+                                          <Button fx:id="regBtnImage" mnemonicParsing="false" text="이미지 선택" />
+                                       </children>
+                                       <padding>
+                                          <Insets left="20.0" right="20.0" />
+                                       </padding>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="220.0" prefWidth="380.0" spacing="10.0">
+                                       <children>
+                                          <TextField fx:id="regTextCompany" prefHeight="30.0" promptText="제조사" />
+                                          <TextField fx:id="regTextModel" prefHeight="30.0" promptText="모델명" />
+                                          <TextField fx:id="regTextColor" prefHeight="30.0" promptText="색상" />
+                                          <TextField fx:id="regTextPrice" prefHeight="30.0" promptText="가격" />
+                                          <DatePicker fx:id="regDatePicker" prefWidth="380.0" promptText="출시일" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                                 <children>
+                                    <Button fx:id="regBtnReg" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="등록" />
+                                    <Button fx:id="regBtnDel" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="삭제" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="30.0" right="30.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab fx:id="tabClient" text="거래처">
+               <content>
+                  <VBox prefHeight="313.0" prefWidth="800.0" spacing="20.0">
+                     <children>
+                        <VBox prefHeight="670.0" prefWidth="760.0" spacing="10.0">
+                           <children>
+                              <TableView fx:id="clientTableView" prefHeight="771.0" prefWidth="760.0">
+                                <columns>
+                                  <TableColumn prefWidth="100.0" text="거래처명" />
+                                  <TableColumn prefWidth="100.0" text="대표자" />
+                                    <TableColumn prefWidth="260.0" text="주소" />
+                                    <TableColumn prefWidth="150.0" text="연락처" />
+                                    <TableColumn prefWidth="120.0" text="등록일" />
+                                </columns>
+                              </TableView>
+                              <VBox prefHeight="83.0" prefWidth="760.0" />
+                              <HBox alignment="CENTER" prefHeight="500.0" prefWidth="700.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="335.0" prefWidth="380.0" spacing="15.0">
+                                       <children>
+                                          <TextField fx:id="clientName" prefHeight="30.0" prefWidth="400.0" promptText="거래처명" />
+                                          <TextField fx:id="clientCeo" prefHeight="30.0" prefWidth="400.0" promptText="대표자" />
+                                          <TextField fx:id="clientAddress" prefHeight="30.0" promptText="주소" />
+                                          <TextField fx:id="clientPhone" prefHeight="30.0" prefWidth="400.0" promptText="연락처" />
+                                          <DatePicker fx:id="clientDatePicker" prefWidth="400.0" promptText="등록일" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="84.0" prefWidth="760.0" spacing="30.0">
+                                 <children>
+                                    <Button fx:id="clientBtnReg" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="등록" />
+                                    <Button fx:id="clientBtnEdit" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="수정" />
+                                    <Button fx:id="clientBtnDel" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="삭제" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab fx:id="tabChart" text="그래프">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="673.0" prefWidth="800.0">
+                           <children>
+                              <BarChart fx:id="barChart" animated="false" barGap="5.0" prefHeight="563.0" prefWidth="799.0">
+                                <xAxis>
+                                  <CategoryAxis animated="false" side="BOTTOM">
+                                       <tickLabelFont>
+                                          <Font size="13.0" />
+                                       </tickLabelFont>
+                                    </CategoryAxis>
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" tickLength="5.0" upperBound="10.0" />
+                                </yAxis>
+                              </BarChart>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>
